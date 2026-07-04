@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SMAPS TRIAGE VENEZUELA</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+        <h1>Triaje SMAPS</h1>
+        <h2>Respuesta Psicosocial Post-Terremoto</h2>
+        <form id="triageForm">
+        <section class="card">
+            <h3>1. Datos generales</h3>
+            <label>Código del caso<input type="text" id="codigo"></label>
+            <label>Edad<input type="number" id="edad"></label>
+            <label>Sexo<select id="sexo"><option value="">Seleccione</option><option>Femenino</option><option>Masculino</option><option>Otro</option></select></label>
+            <label>Municipio<input type="text" id="municipio"></label>
+            <label>Fecha de evaluación<input type="date" id="fecha"></label>
+        </section>
+
+        <section class="card">
+            <h3>2. Exposición al evento</h3>
+            <label>¿Estuvo presente durante el terremoto?<select id="presente"><option value="0">No</option><option value="1">Sí</option></select></label>
+            <label>¿Perdió su vivienda?<select id="vivienda"><option value="0">No</option><option value="2">Sí</option></select></label>
+            <label>¿Perdió un familiar?<select id="fallecido"><option value="0">No</option><option value="3">Sí</option>
+            </select></label>
+            <label>
+            ¿Resultó herido?
+            <select id="herido">
+            <option value="0">No</option>
+            <option value="2">Sí</option>
+            </select>
+            </label>
+        </section>
+
+<!-- ===================================================== -->
+<!-- RIESGO -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+<h3>3. Riesgos inmediatos</h3>
+
+<label>
+
+¿Existe riesgo médico urgente?
+
+<select id="riesgoMedico">
+
+<option value="0">No</option>
+
+<option value="10">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Existe riesgo de violencia?
+
+<select id="violencia">
+
+<option value="0">No</option>
+
+<option value="10">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Niño separado de cuidadores?
+
+<select id="separado">
+
+<option value="0">No</option>
+
+<option value="10">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Persona mayor sola?
+
+<select id="adultomayor">
+
+<option value="0">No</option>
+
+<option value="6">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- ESTADO EMOCIONAL -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+<h3>4. Estado emocional</h3>
+
+<label>
+
+Ansiedad intensa
+
+<select id="ansiedad">
+
+<option value="0">No</option>
+
+<option value="1">Leve</option>
+
+<option value="2">Moderada</option>
+
+<option value="3">Severa</option>
+
+</select>
+
+</label>
+
+<label>
+
+Llanto frecuente
+
+<select id="llanto">
+
+<option value="0">No</option>
+
+<option value="1">Leve</option>
+
+<option value="2">Moderado</option>
+
+<option value="3">Intenso</option>
+
+</select>
+
+</label>
+
+<label>
+
+Desorientación
+
+<select id="desorientacion">
+
+<option value="0">No</option>
+
+<option value="4">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Ataques de pánico
+
+<select id="panico">
+
+<option value="0">No</option>
+
+<option value="4">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- FUNCIONAMIENTO -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+<h3>5. Funcionamiento diario</h3>
+
+<label>
+
+¿Puede realizar actividades básicas?
+
+<select id="funcionamiento">
+
+<option value="0">Normal</option>
+
+<option value="2">Con dificultad</option>
+
+<option value="4">No puede</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Puede dormir?
+
+<select id="sueno">
+
+<option value="0">Sí</option>
+
+<option value="1">Con dificultad</option>
+
+<option value="3">No</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Puede alimentarse?
+
+<select id="alimentacion">
+
+<option value="0">Sí</option>
+
+<option value="2">Con dificultad</option>
+
+<option value="4">No</option>
+
+</select>
+
+</label>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- APOYO -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+<h3>6. Red de apoyo</h3>
+
+<label>
+
+Cuenta con familiares
+
+<select id="familia">
+
+<option value="0">Sí</option>
+
+<option value="2">No</option>
+
+</select>
+
+</label>
+
+<label>
+
+Cuenta con vivienda temporal
+
+<select id="albergue">
+
+<option value="0">Sí</option>
+
+<option value="2">No</option>
+
+</select>
+
+</label>
+
+<label>
+
+Tiene acceso a alimentos
+
+<select id="comida">
+
+<option value="0">Sí</option>
+
+<option value="2">No</option>
+
+</select>
+
+</label>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- OBSERVACIONES -->
+<!-- ===================================================== -->
+
+<section class="card">
+
+<h3>7. Observaciones clínicas</h3>
+
+<textarea id="observaciones"></textarea>
+
+</section>
+
+<section class="card">
+
+<h3>8. Riesgo suicida</h3>
+
+<label>
+
+¿Ha expresado deseos de morir?
+
+<select id="deseosMorir">
+
+<option value="0">No</option>
+<option value="5">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Ha pensado en hacerse daño?
+
+<select id="autolesion">
+
+<option value="0">No</option>
+<option value="8">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+¿Existe un plan suicida actual?
+
+<select id="planSuicida">
+
+<option value="0">No</option>
+<option value="100">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<section class="card">
+
+<h3>9. Estado mental</h3>
+
+<label>
+
+Confusión importante
+
+<select id="confusion">
+
+<option value="0">No</option>
+<option value="6">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Alucinaciones
+
+<select id="alucinaciones">
+
+<option value="0">No</option>
+<option value="100">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Delirios
+
+<select id="delirios">
+
+<option value="0">No</option>
+<option value="100">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Agitación extrema
+
+<select id="agitacion">
+
+<option value="0">No</option>
+<option value="8">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<section class="card">
+
+<h3>10. Protección</h3>
+
+<label>
+
+Sobreviviente de violencia basada en género
+
+<select id="vbg">
+
+<option value="0">No</option>
+<option value="100">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Violencia intrafamiliar
+
+<select id="violenciaFamiliar">
+
+<option value="0">No</option>
+<option value="8">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Niño separado de cuidadores
+
+<select id="nnaSeparado">
+
+<option value="0">No</option>
+<option value="100">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Persona en riesgo de protección
+
+<select id="proteccion">
+
+<option value="0">No</option>
+<option value="8">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<section class="card">
+
+<h3>11. Consumo de alcohol y drogas</h3>
+
+<label>
+
+Consumo problemático reciente
+
+<select id="sustancias">
+
+<option value="0">No</option>
+<option value="4">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Intoxicación actual
+
+<select id="intoxicacion">
+
+<option value="0">No</option>
+<option value="100">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<section class="card">
+
+<h3>12. Vulnerabilidad</h3>
+
+<label>
+
+Embarazo
+
+<select id="embarazo">
+
+<option value="0">No</option>
+<option value="2">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Discapacidad
+
+<select id="discapacidad">
+
+<option value="0">No</option>
+<option value="2">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Adulto mayor (>65)
+
+<select id="adultoMayor">
+
+<option value="0">No</option>
+<option value="2">Sí</option>
+
+</select>
+
+</label>
+
+<label>
+
+Menor de edad
+
+<select id="menor">
+
+<option value="0">No</option>
+<option value="2">Sí</option>
+
+</select>
+
+</label>
+
+</section>
+
+<section class="card">
+
+<h3>13. Funcionamiento</h3>
+
+<label>
+
+Puede cuidar de sí mismo
+
+<select id="autocuidado">
+
+<option value="0">Sí</option>
+<option value="3">Con dificultad</option>
+<option value="6">No</option>
+
+</select>
+
+</label>
+
+<label>
+
+Puede tomar decisiones
+
+<select id="decisiones">
+
+<option value="0">Sí</option>
+<option value="2">Con dificultad</option>
+<option value="6">No</option>
+
+</select>
+
+</label>
+
+<label>
+
+Puede cuidar de sus hijos o dependientes
+
+<select id="dependientes">
+
+<option value="0">Sí</option>
+<option value="3">Con dificultad</option>
+<option value="6">No</option>
+
+</select>
+
+</label>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- BOTÓN -->
+<!-- ===================================================== -->
+
+<div class="center">
+
+<button type="button" id="evaluar">
+
+Evaluar Caso
+
+</button>
+
+</div>
+
+</form>
+
+<!-- ===================================================== -->
+<!-- RESULTADOS -->
+<!-- ===================================================== -->
+
+<section id="resultado" class="resultado">
+
+<h2>Resultado del Triaje</h2>
+
+<p>
+
+<strong>Puntaje:</strong>
+
+<span id="puntaje"></span>
+
+</p>
+
+<p>
+
+<strong>Nivel:</strong>
+
+<span id="nivel"></span>
+
+</p>
+
+<p>
+
+<strong>Intervención:</strong>
+
+<span id="intervencion"></span>
+
+</p>
+
+<p>
+
+<strong>Derivación:</strong>
+
+<span id="derivacion"></span>
+
+</p>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
